@@ -87,3 +87,28 @@ function generateUpperCaseLetters() {
   }
   return capitals
 }
+
+function isCharUpperCase(char) {
+
+  if (char === char.toUpperCase()) return true
+  return false
+}
+
+function getCeaserChar(arrayOfAlphabet, char, step) {
+  for(let i = 0; i < arrayOfAlphabet.length; i++){
+    const singleChar = arrayOfAlphabet[i]
+    if (singleChar === char) {
+      return arrayOfAlphabet[(i + step)]
+    }
+  }
+  return ' '
+}
+function getDecryptCeaserChar(arrayOfAlphabet, char, step) {
+  for(let i = 0; i < arrayOfAlphabet.length; i++){
+    const singleChar = arrayOfAlphabet[i]
+    if (singleChar === char) {
+      return arrayOfAlphabet[(i - step)]
+    }
+  }
+  return ' '
+}
