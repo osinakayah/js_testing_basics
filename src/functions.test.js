@@ -1,3 +1,5 @@
+const {calculator, reverseString, capitalize, encryption, decryption, anaylze} = require('./function')
+
 test("Capitalize the first string", () => {
   expect(capitalize("osi")).toBe("Osi")
   expect(capitalize("osi joseph")).toBe("Osi joseph")
