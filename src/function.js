@@ -87,10 +87,7 @@ function generateUpperCaseLetters() {
   }
   return capitals
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> d6cd0daa41bf45f9c1e7293084cb64c78f7848a4
 function isCharUpperCase(char) {
 
   if (char === char.toUpperCase()) return true
@@ -101,11 +98,7 @@ function getCeaserChar(arrayOfAlphabet, char, step) {
   for(let i = 0; i < arrayOfAlphabet.length; i++){
     const singleChar = arrayOfAlphabet[i]
     if (singleChar === char) {
-<<<<<<< HEAD
-        return arrayOfAlphabet[(i + step)]
-=======
-      return arrayOfAlphabet[(i + step)]
->>>>>>> d6cd0daa41bf45f9c1e7293084cb64c78f7848a4
+      return arrayOfAlphabet[(i + step)];
     }
   }
   return ' '
@@ -114,11 +107,7 @@ function getDecryptCeaserChar(arrayOfAlphabet, char, step) {
   for(let i = 0; i < arrayOfAlphabet.length; i++){
     const singleChar = arrayOfAlphabet[i]
     if (singleChar === char) {
-<<<<<<< HEAD
-        return arrayOfAlphabet[(i - step)]
-=======
-      return arrayOfAlphabet[(i - step)]
->>>>>>> d6cd0daa41bf45f9c1e7293084cb64c78f7848a4
+        return arrayOfAlphabet[(i - step)];
     }
   }
   return ' '
