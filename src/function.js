@@ -42,7 +42,10 @@ exports.decryption = function (word, step) {
   const wordsAsArray = word.split('');
   const encryptedWordsOfArray = []
   wordsAsArray.forEach((item) => {
-    if (isCharUpperCase(item)) {
+    if (isPunctuation(item)) {
+      encryptedWordsOfArray.push(item);
+    }
+    else if (isCharUpperCase(item)) {
       encryptedWordsOfArray.push(getDecryptCeaserChar(capitals, item, step))
     }
     else {
@@ -56,12 +59,15 @@ exports.decryption = function (word, step) {
 
 exports.encryption = function (word, step) {
   const capitals = generateUpperCaseLetters();
-  const lowCapitals = generateLowerCaseLettes()
+  const lowCapitals = generateLowerCaseLettes();
 
   const wordsAsArray = word.split('');
   const encryptedWordsOfArray = []
   wordsAsArray.forEach((item) => {
-    if (isCharUpperCase(item)) {
+    if (isPunctuation(item)){
+      encryptedWordsOfArray.push(item);
+    }
+    else if(isCharUpperCase(item)) {
       encryptedWordsOfArray.push(getCeaserChar(capitals, item, step))
     }
     else {
@@ -111,4 +117,8 @@ function getDecryptCeaserChar(arrayOfAlphabet, char, step) {
     }
   }
   return ' '
+}
+
+function isPunctuation(str) {
+  return !!str.match(/^[.,:!?]/);
 }

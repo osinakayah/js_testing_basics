@@ -31,6 +31,20 @@ test("Test Caser encryption algorithm", () => {
 
 test("Test Caser decryption algorithm", () => {
   expect(decryption("buubdl bu ebxo", 1)).toBe("attack at dawn")
+});
+
+test("Test Caser keeps the same case for encryption", () => {
+  expect(encryption("Aa", 1)).toBe("Bb");
+})
+test("Test Caser keeps the same case for decryption", () => {
+  expect(decryption("bB", 1)).toBe("aA")
+})
+
+test("Test Caser puntuation for encryption", () => {
+  expect(encryption("Aa,", 1)).toBe("Bb,");
+})
+test("Test Caser puntuation for decryption", () => {
+  expect(decryption("buubdl bu ebxo,", 1)).toBe("attack at dawn,")
 })
 
 test("Test Analyze array", () => {
