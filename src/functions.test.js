@@ -50,3 +50,25 @@ test("Test Caser puntuation for decryption", () => {
 test("Test Analyze array", () => {
   expect(anaylze([1,8,3,4,2,6])).toEqual({average: 4, min: 1, max: 8, length: 6})
 })
+
+describe("caesarCipher", ()=>{
+  it("Encodes the received string using a key between 0 and 25", ()=>{
+    expect(encryption("attack at dawn",5)).toBe("fyyfhp fy ifbs")
+  });
+  it("Keeps the original case", ()=>{
+    expect(encryption("ATTACK AT DAWN",5)).toBe("FYYFHP FY IFBS")
+  });
+  it("Works with strings that use . as separator",()=>{
+    expect(encryption("ATTACK.AT.DAWN",5)).toBe("FYYFHP.FY.IFBS")
+  })
+
+  it("Encodes the received string using a key between 0 and 25", ()=>{
+    expect(decryption("fyyfhp fy ifbs",5)).toBe("attack at dawn")
+  });
+  // it("Keeps the original case", ()=>{
+  //   expect(decryption("FYYFHP FY IFBS",5)).toBe("ATTACK AT DAWN")
+  // });
+  // it("Works with strings that use . as separator",()=>{
+  //   expect(decryption("FYYFHP.FY.IFBS",5)).toBe("ATTACK.AT.DAWN")
+  // })
+});

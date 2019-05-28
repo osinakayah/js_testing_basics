@@ -68,7 +68,7 @@ exports.encryption = function (word, step) {
       encryptedWordsOfArray.push(item);
     }
     else if(isCharUpperCase(item)) {
-      encryptedWordsOfArray.push(getCeaserChar(capitals, item, step))
+      encryptedWordsOfArray.push (getCeaserChar(capitals, item, step))
     }
     else {
       encryptedWordsOfArray.push(getCeaserChar(lowCapitals, item, step))
@@ -104,7 +104,13 @@ function getCeaserChar(arrayOfAlphabet, char, step) {
   for(let i = 0; i < arrayOfAlphabet.length; i++){
     const singleChar = arrayOfAlphabet[i]
     if (singleChar === char) {
-      return arrayOfAlphabet[(i + step)];
+      if ((i + step) > arrayOfAlphabet.length) {
+        return getCeaserChar(arrayOfAlphabet, arrayOfAlphabet[0], step - (arrayOfAlphabet.length - i));
+      }
+      else {
+        return arrayOfAlphabet[(i + step)];
+      }
+
     }
   }
   return ' '
