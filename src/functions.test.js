@@ -53,7 +53,7 @@ test("Test Analyze array", () => {
 
 describe("caesarCipher", ()=>{
   it("Encodes the received string using a key between 0 and 25", ()=>{
-    expect(encryption("attack at dawn",5)).toBe("fyyfhp fy ifbs")
+    expect(encryption("attack at dayn",5)).toBe("fyyfhp fy ifds")
   });
   it("Keeps the original case", ()=>{
     expect(encryption("ATTACK AT DAWN",5)).toBe("FYYFHP FY IFBS")
@@ -62,13 +62,13 @@ describe("caesarCipher", ()=>{
     expect(encryption("ATTACK.AT.DAWN",5)).toBe("FYYFHP.FY.IFBS")
   })
 
-  it("Encodes the received string using a key between 0 and 25", ()=>{
-    expect(decryption("fyyfhp fy ifbs",5)).toBe("attack at dawn")
+  it("DEcodes the received string using a key between 0 and 25", ()=>{
+    expect(decryption("fyyfhp fy ifds",5)).toBe("attack at dayn")
   });
-  // it("Keeps the original case", ()=>{
-  //   expect(decryption("FYYFHP FY IFBS",5)).toBe("ATTACK AT DAWN")
-  // });
-  // it("Works with strings that use . as separator",()=>{
-  //   expect(decryption("FYYFHP.FY.IFBS",5)).toBe("ATTACK.AT.DAWN")
-  // })
+  it("Keeps the original case", ()=>{
+    expect(decryption("FYYFHP FY IFBS",5)).toBe("ATTACK AT DAWN")
+  });
+  it("Works with strings that use . as separator",()=>{
+    expect(decryption("FYYFHP.FY.IFBS",5)).toBe("ATTACK.AT.DAWN")
+  })
 });

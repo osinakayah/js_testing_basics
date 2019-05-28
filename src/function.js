@@ -119,6 +119,9 @@ function getDecryptCeaserChar(arrayOfAlphabet, char, step) {
   for(let i = 0; i < arrayOfAlphabet.length; i++){
     const singleChar = arrayOfAlphabet[i]
     if (singleChar === char) {
+        if ((i - step) < 0) {
+          return getDecryptCeaserChar(arrayOfAlphabet, arrayOfAlphabet[arrayOfAlphabet.length - 1], Math.abs(step - i-1))
+        }
         return arrayOfAlphabet[(i - step)];
     }
   }
