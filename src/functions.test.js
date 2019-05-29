@@ -72,3 +72,15 @@ describe("caesarCipher", ()=>{
     expect(decryption("FYYFHP.FY.IFBS",5)).toBe("ATTACK.AT.DAWN")
   })
 });
+
+describe("caesarCipher", ()=>{
+  it("Encodes the received string using a key between 0 and 25", ()=>{
+    expect(encryption("attack at dawn",5)).toMatch("fyyfhp fy ifbs")
+  });
+  it("Keeps the original case", ()=>{
+    expect(encryption("ATTACK AT DAWN",5)).toMatch("FYYFHP FY IFBS")
+  });
+  it("Works with strings that use . as separator",()=>{
+    expect(encryption("ATTACK.AT.DAWN",5)).toMatch("FYYFHP.FY.IFBS")
+  })
+});
